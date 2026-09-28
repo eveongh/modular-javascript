@@ -21,10 +21,20 @@ class BaseHero {
     3. Assign 'this.equippedShield' to the incoming 'shieldType' argument.
 */
 
+class Warrior extends BaseHero {
+    constructor(heroName,shieldType){
+        super(heroName);
+        this.equippedShield = shieldType;
+    }
+}
+
 /* 
     TODO: Create a new warrior and log a description using properties from both 
     Warrior and BaseHero.
 */
+
+const steve = new Warrior("Steve", "Diamond")
+console.log(steve);
 
 /** EXERCISE 2: REPAIRING THE EXTENDED PET BLUEPRINT **/
 
@@ -39,8 +49,11 @@ class CompanionAnimal {
     property.
 */
 class Griffin extends CompanionAnimal {
-	constructor(flightSpeed) {
-		this.speed = flightSpeed;
+//FIX: included 'petName' as a constructor parameter so it can pass upward
+	constructor(petName, flightSpeed) {
+    //FIX: added super() 
+		super (petName);
+        this.speed = flightSpeed;
 	}
 }
 
@@ -48,3 +61,6 @@ class Griffin extends CompanionAnimal {
     TODO: Create a new griffin with both a name and speed, then log a description 
     using both properties.
 */
+
+const buckBeak = new Griffin ("Buckbeak", 934); 
+console.log(`${buckBeak.name} took flight at speed ${buckBeak.speed}!`);
