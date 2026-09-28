@@ -23,14 +23,26 @@ class GameCreature {
     "The Dragon breathes a column of roaring flame!"
 */
 
+class Dragon extends GameCreature {
+	makeSound() {
+		return "The Dragon breathes a column of roaring flame!";
+	}
+}
+
 /*
     TODO: Instantiate a beast of the GameCreature class 
     and a dragon of the Dragon class.
 */
 
+const basicBeast = new GameCreature ("Wild Boar");
+const bossDragon = new Dragon ("Ancient Dragon");
+
 /*
     TODO: Call the .makeSound() method for each creature to verify the override.
 */
+
+console.log(basicBeast.makeSound());
+console.log(bossDragon.makeSound());
 
 /** EXERCISE 2: THE TURN-BASED ENEMY ROUND **/
 
@@ -63,3 +75,12 @@ class EnemyArcher {
     Then, loop through the array using '.forEach()' and execute the '.takeTurn()' 
     method on each entity, logging what the player sees.
 */
+
+const hostileEnemies = [
+	new EnemySlime("Green"),
+	new EnemyArcher("Skeleton Marksman"),
+	new EnemySlime("Blue"),
+];
+
+console.log("\n--- ENEMY TURN SEQUENCE COMMENCING ---");
+hostileEnemies.forEach(enemy => console.log(enemy.takeTurn()));
