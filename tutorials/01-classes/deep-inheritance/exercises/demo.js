@@ -49,3 +49,4 @@ console.log(ignis.castInferno());
     Follow up with additional exercises after demo for hands-on practice 
     with problem-solving and coding!
 */
+   
