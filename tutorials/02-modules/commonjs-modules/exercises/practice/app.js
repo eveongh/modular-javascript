@@ -14,5 +14,8 @@
     in the log statements with the correct references.
 */
 
-console.log(`Welcome to ${null}!`);
-console.log(`Maximum allowed team size: ${null} players.`);
+const config = require("./settings.js");
+
+console.log(`Welcome to ${config.gameTitle}!`);
+console.log(`Maximum allowed team size: ${config.maxPartySize} players.`);
+
